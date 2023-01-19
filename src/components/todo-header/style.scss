@@ -1,0 +1,9 @@
+@import "../../styles/vars";
+.todo-header {
+  display: flex;
+  align-items: center;
+}
+.todo-header-title {
+  font-weight: $text-font-weight-bold;
+  padding-left: 5px;
+}

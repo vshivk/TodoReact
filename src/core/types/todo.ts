@@ -1,5 +1,6 @@
 export interface Todo{
-    task: string
+    value: string,
+    id: string
 }
 export interface TodoState{
     tasks: Todo[],
