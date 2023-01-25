@@ -10,23 +10,21 @@ export const todoSlice = createSlice({
     name: 'todo',
     initialState,
     reducers: {
-        todoChecking(state, action: PayloadAction<Todo[]>) {
-            state.tasks = action.payload;
-        },
-        todoChanging(state, action: PayloadAction<string>) {
-            state.tasks = state.tasks.map(task => ({...task, name: action.payload}))
-        },
         todoAdding(state, action: PayloadAction<Todo>) {
-            state.tasks = [...state.tasks, action.payload]
+            state.tasks = [...state.tasks, action.payload];
         },
         todoRemoving(state, action: PayloadAction<string>) {
             state.tasks = state.tasks.filter(task => task.id !== action.payload);
+        },
+        todoCompletingTask(state,action: PayloadAction<Todo>){
+            state.completed = [...state.tasks, action.payload];
         }
     }
 });
 export const {
     todoAdding,
-    todoRemoving
+    todoRemoving,
+    todoCompletingTask
 } = todoSlice.actions;
 export const selectTodoReducer = (state: RootState) => state.todoReducer;
 export default todoSlice.reducer;

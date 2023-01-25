@@ -7,7 +7,7 @@ const TodoHeader:FC = () => {
         <div className={'todo-header todo-border todo-spacing'}>
             <img width={'20px'} height={'20px'} src={checkMark}
                  alt="check-mark"/>
-            <p className={'todo-header-title'}>Todo</p>
+            <h4>Todo</h4>
         </div>
     );
 };

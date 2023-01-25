@@ -1,6 +1,7 @@
 import React, {FC} from 'react';
 import buttonDelete from "../../assets/svg/delete.svg";
-import TodoCompleted from "../todo-completed/todo-completed";
+import TodoCompleted from "./todo-completed";
+import "./style.scss";
 
 const TodoFooter:FC = () => {
     return (

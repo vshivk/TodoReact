@@ -1,11 +1,13 @@
 import React, {FC} from 'react';
+import Todo from './components/todo';
 import './styles/index.scss';
-import TodoContent from "./components/todo-content/todo-content";
 
 const App: FC = () => {
     return (
-        <div className={'todo-wrapper'}>
-            <TodoContent/>
+        <div className={'container'}>
+            <div className={'wrapper'}>
+                <Todo/>
+            </div>
         </div>
     );
 }

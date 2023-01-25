@@ -7,42 +7,47 @@ body {
   font-weight: $text-font-weight;
 }
 
-p {
+p, h4 {
   margin: 0;
 }
 
 ul {
   padding-inline-start: 0;
+  margin: 0;
 }
 
 li {
   list-style-type: none;
 }
 
-input, button {
+input {
   border: none;
 }
-.todo-spacing{
+
+button {
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+}
+
+.todo-spacing {
   padding: 15px;
 }
-.todo-wrapper {
-  position: fixed;
-  width: 300px;
-  top: 10%;
-  left: 40%;
-  box-shadow: 0 10px 15px 0 rgb(0 0 0 / 50%);
-  border-radius: 5px;
+
+.container {
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 15px;
+}
+
+.wrapper {
+  margin: 20px 0;
 }
 
 .todo-border {
   border-bottom: 1px solid #80808030;
-}
-
-.todo-button {
-  display: flex;
-  background: transparent;
-  cursor: pointer;
-  padding: 0;
 }
 
 .todo-item {
@@ -50,15 +55,5 @@ input, button {
   align-items: center;
   justify-content: space-between;
   padding: 6px 0 6px 0;
-}
-
-.todo-add {
-  display: flex;
-  align-items: center;
-}
-
-.todo-complete {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  gap: 10px;
 }
