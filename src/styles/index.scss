@@ -9,6 +9,8 @@ body {
 
 p, h4 {
   margin: 0;
+  width: 100%;
+  word-break: break-word;
 }
 
 ul {
@@ -18,10 +20,6 @@ ul {
 
 li {
   list-style-type: none;
-}
-
-input {
-  border: none;
 }
 
 button {
@@ -48,12 +46,4 @@ button {
 
 .todo-border {
   border-bottom: 1px solid #80808030;
-}
-
-.todo-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 6px 0 6px 0;
-  gap: 10px;
 }

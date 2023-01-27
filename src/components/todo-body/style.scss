@@ -1,7 +1,65 @@
-.todo-actions{
-  padding-top: 10px;
+.todo-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   gap: 10px;
 }
-.todo-list{
-  padding: 10px 0;
+
+.todo-list {
+  display: grid;
+  gap: 15px;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.todo-input {
+  width: 100%;
+}
+
+.todo-body {
+  display: grid;
+  gap: 15px;
+}
+
+.todo-item-value {
+  position: relative;
+
+  &__label {
+    word-break: break-word;
+  }
+
+  &__checkbox + label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+  }
+
+  &__checkbox {
+    min-width: 20px;
+    min-height: 20px;
+    //visibility: hidden;
+  }
+
+  &__checkbox + label::before {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url("../../assets/svg/circle.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    left: 0;
+    top: 0;
+  }
+}
+.todo-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }

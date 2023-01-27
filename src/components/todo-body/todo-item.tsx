@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {Dispatch, FC} from 'react';
 import circle from "../../assets/svg/circle.svg";
 import buttonDelete from "../../assets/svg/delete.svg";
 import {Todo} from "../../core/types/todo";
@@ -6,35 +6,36 @@ import {useDispatch} from "react-redux";
 import {selectTodoReducer, todoCompletingTask, todoRemoving} from "../../core/store/reducers/todo-slice";
 import {useAppSelector} from "../../core/hooks/use-app-selector";
 import TodoInput from "./todo-input";
+import {useAppDispatch} from "../../core/hooks/use-app-dispatch";
 
 interface ITodoItemProps {
-    task: Todo
+    task: Todo,
+    taskValue: string,
+    setTaskValue: Dispatch<React.SetStateAction<string>>
 }
 
 const TodoItem: FC<ITodoItemProps> = ({task}) => {
-    const {id} = task;
-    const {tasks} = useAppSelector(selectTodoReducer);
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
+    const {completed} = useAppSelector(selectTodoReducer);
 
-    const removeFromList = () => {
-        dispatch(todoRemoving(id));
+    const removeFromTasks = () => {
+        dispatch(todoRemoving(task.id));
     }
+
     const completeTask = () => {
-        return tasks.filter(task => {
-            if (task.id === id) {
-                dispatch(todoCompletingTask(task));
-                dispatch(todoRemoving(id));
-            }
-        })
+        if (!completed.includes({value: task.value, id: task.id})) {
+            dispatch(todoCompletingTask({value: task.value, id: task.id}));
+            removeFromTasks();
+        }
     }
+
     return (
         <li className={'todo-item'}>
-            <button className={'todo-button'} onClick={completeTask}>
-                <img width={'20px'} height={'20px'} src={circle}
-                     alt="circle"/>
-            </button>
-            <TodoInput task={task}/>
-            <button className={'todo-button'} onClick={removeFromList}>
+            <div className={'todo-item-value'} style={{display: "flex", gap: '10px'}}>
+                <input className={'todo-item-value__checkbox'} type="checkbox" id={task.id} onChange={completeTask}/>
+                <label className={'todo-item-value__label'} htmlFor={task.id}>{task.value}</label>
+            </div>
+            <button className={'todo-button'} onClick={removeFromTasks}>
                 <img src={buttonDelete} width={'20px'} height={'20px'} alt="button-delete"/>
             </button>
         </li>

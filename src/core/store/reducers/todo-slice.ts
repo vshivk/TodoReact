@@ -17,14 +17,22 @@ export const todoSlice = createSlice({
             state.tasks = state.tasks.filter(task => task.id !== action.payload);
         },
         todoCompletingTask(state,action: PayloadAction<Todo>){
-            state.completed = [...state.tasks, action.payload];
+            state.completed = [...state.completed, action.payload];
+        },
+        todoRemovingFromCompleted(state, action: PayloadAction<string>){
+            state.completed = state.completed.filter(task => task.id !== action.payload);
+        },
+        todoRemovingAllCompleted(state){
+            state.completed = [];
         }
     }
 });
 export const {
     todoAdding,
     todoRemoving,
-    todoCompletingTask
+    todoCompletingTask,
+    todoRemovingFromCompleted,
+    todoRemovingAllCompleted
 } = todoSlice.actions;
 export const selectTodoReducer = (state: RootState) => state.todoReducer;
 export default todoSlice.reducer;

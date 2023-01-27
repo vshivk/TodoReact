@@ -1,17 +1,16 @@
-import React, {FC, useState} from 'react';
-import {Todo} from "../../core/types/todo";
+import React, {Dispatch, FC} from 'react';
 
 interface ITodoInputProps {
-    task: Todo
+    taskValue: string,
+    setTaskValue: Dispatch<React.SetStateAction<string>>
 }
 
-const TodoInput: FC<ITodoInputProps> = ({task}) => {
-    const [taskValue, setTaskValue] = useState('');
-
+const TodoInput: FC<ITodoInputProps> = ({taskValue,setTaskValue}) => {
     return (
-        <input className={'todo-text'}
+        <input className={'todo-input'}
                value={taskValue}
                onChange={e => setTaskValue(e.target.value)}
+               placeholder={'Type your task'}
                type="text"/>
     );
 };

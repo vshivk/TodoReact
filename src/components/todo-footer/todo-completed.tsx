@@ -11,9 +11,9 @@ const TodoCompleted = () => {
         <>
             {isEmpty
                 &&
-                <ul className={'todo-list'}>
+                <ul className={'todo-complete-list'}>
                     {completed.map(task=>
-                        <TodoCompletedItem key={task.id} value={task.value}/>
+                        <TodoCompletedItem key={task.id} task={task}/>
                     )}
                 </ul>
             }

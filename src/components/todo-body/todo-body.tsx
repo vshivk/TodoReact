@@ -1,16 +1,16 @@
-import React, {FC} from 'react';
+import React, {FC, useState} from 'react';
 import TodoList from "./todo-list";
 import "./style.scss"
-import TodoButton from "../todo-button/todo-button";
+import TodoActions from "./todo-actions";
 
-const TodoBody:FC = () => {
+const TodoBody: FC = () => {
+    const [taskValue, setTaskValue] = useState('');
+
     return (
         <div className={'todo-body todo-border todo-spacing'}>
             <p>Tasks</p>
-            <TodoList/>
-            <div className={'todo-actions'}>
-               <TodoButton/>
-            </div>
+            <TodoActions taskValue={taskValue} setTaskValue={setTaskValue}/>
+            <TodoList taskValue={taskValue} setTaskValue={setTaskValue}/>
         </div>
     );
 };
