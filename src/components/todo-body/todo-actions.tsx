@@ -4,11 +4,7 @@ import {useDispatch} from "react-redux";
 import {todoAdding} from "../../core/store/reducers/todo-slice";
 import {nanoid} from "@reduxjs/toolkit";
 import plus from "../../assets/svg/plus.svg";
-
-interface ITodoActionsProps {
-    taskValue: string,
-    setTaskValue: Dispatch<React.SetStateAction<string>>
-}
+import {ITodoActionsProps} from "../../core/types/props";
 
 const TodoActions: FC<ITodoActionsProps> = ({taskValue, setTaskValue}) => {
     const isEmpty = taskValue === '';

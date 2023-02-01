@@ -19,6 +19,8 @@
 
 .todo-input {
   width: 100%;
+  padding: 5px;
+  font-size: 13px;
 }
 
 .todo-body {
@@ -28,24 +30,15 @@
 
 .todo-item-value {
   position: relative;
+  width: 100%;
+}
 
-  &__label {
-    word-break: break-word;
-  }
+.todo-item-value__label {
+  width: 100%;
+  cursor: pointer;
+  word-break: break-word;
 
-  &__checkbox + label {
-    display: inline-flex;
-    align-items: center;
-    user-select: none;
-  }
-
-  &__checkbox {
-    min-width: 20px;
-    min-height: 20px;
-    //visibility: hidden;
-  }
-
-  &__checkbox + label::before {
+  &::before {
     content: '';
     position: absolute;
     display: inline-block;
@@ -58,6 +51,19 @@
     top: 0;
   }
 }
+
+.todo-item-value__checkbox {
+  min-width: 20px;
+  min-height: 20px;
+  visibility: hidden;
+
+  & + label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+  }
+}
+
 .todo-button {
   display: flex;
   align-items: center;

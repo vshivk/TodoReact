@@ -1,18 +1,9 @@
-import React, {Dispatch, FC} from 'react';
-import circle from "../../assets/svg/circle.svg";
+import React, {FC} from 'react';
 import buttonDelete from "../../assets/svg/delete.svg";
-import {Todo} from "../../core/types/todo";
-import {useDispatch} from "react-redux";
 import {selectTodoReducer, todoCompletingTask, todoRemoving} from "../../core/store/reducers/todo-slice";
 import {useAppSelector} from "../../core/hooks/use-app-selector";
-import TodoInput from "./todo-input";
 import {useAppDispatch} from "../../core/hooks/use-app-dispatch";
-
-interface ITodoItemProps {
-    task: Todo,
-    taskValue: string,
-    setTaskValue: Dispatch<React.SetStateAction<string>>
-}
+import {ITodoItemProps} from "../../core/types/props";
 
 const TodoItem: FC<ITodoItemProps> = ({task}) => {
     const dispatch = useAppDispatch();

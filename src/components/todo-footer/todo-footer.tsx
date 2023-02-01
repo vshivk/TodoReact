@@ -9,13 +9,12 @@ import {useAppSelector} from "../../core/hooks/use-app-selector";
 const TodoFooter: FC = () => {
     const dispatch = useAppDispatch();
     const {completed} = useAppSelector(selectTodoReducer);
-    const isEmpty=completed.length>0;
+    const isEmpty = completed.length > 0;
 
     const removeAllCompleted = () => {
-        if (isEmpty){
+        if (isEmpty) {
             dispatch(todoRemovingAllCompleted());
         }
-
     }
 
     return (

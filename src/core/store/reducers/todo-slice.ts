@@ -1,11 +1,8 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {Todo, TodoState} from "../../types/todo";
+import {Todo} from "../../types/todo";
 import {RootState} from "../store";
+import {initialState} from "../../utils/todo";
 
-const initialState: TodoState = {
-    tasks: [],
-    completed: [],
-}
 export const todoSlice = createSlice({
     name: 'todo',
     initialState,

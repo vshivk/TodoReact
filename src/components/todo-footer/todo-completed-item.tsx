@@ -1,15 +1,9 @@
 import React, {FC} from 'react';
 import checkCircle from "../../assets/svg/check-circle.svg";
 import buttonDelete from "../../assets/svg/delete.svg";
-import {selectTodoReducer, todoRemoving, todoRemovingFromCompleted} from "../../core/store/reducers/todo-slice";
+import {todoRemovingFromCompleted} from "../../core/store/reducers/todo-slice";
 import {useAppDispatch} from "../../core/hooks/use-app-dispatch";
-import {useAppSelector} from "../../core/hooks/use-app-selector";
-import {Todo} from "../../core/types/todo";
-
-
-interface ITodoCompletedItemProps {
-    task: Todo
-}
+import {ITodoCompletedItemProps} from "../../core/types/props";
 
 const TodoCompletedItem: FC<ITodoCompletedItemProps> = ({task}) => {
     const {id, value} = task;

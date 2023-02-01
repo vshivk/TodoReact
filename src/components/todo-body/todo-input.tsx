@@ -1,9 +1,5 @@
-import React, {Dispatch, FC} from 'react';
-
-interface ITodoInputProps {
-    taskValue: string,
-    setTaskValue: Dispatch<React.SetStateAction<string>>
-}
+import React, {FC} from 'react';
+import {ITodoInputProps} from "../../core/types/props";
 
 const TodoInput: FC<ITodoInputProps> = ({taskValue,setTaskValue}) => {
     return (
