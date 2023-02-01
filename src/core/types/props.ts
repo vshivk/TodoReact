@@ -5,11 +5,6 @@ export interface ITodoCompletedItemProps {
     task: Todo
 }
 
-export interface ITodoActionsProps {
-    taskValue: string,
-    setTaskValue: Dispatch<React.SetStateAction<string>>
-}
-
 export interface ITodoItemProps {
     task: Todo,
     taskValue: string,
@@ -17,11 +12,6 @@ export interface ITodoItemProps {
 }
 
 export interface ITodoInputProps {
-    taskValue: string,
-    setTaskValue: Dispatch<React.SetStateAction<string>>
-}
-
-export interface ITodoListProps {
     taskValue: string,
     setTaskValue: Dispatch<React.SetStateAction<string>>
 }

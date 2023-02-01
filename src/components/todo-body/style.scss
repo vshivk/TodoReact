@@ -1,71 +1,68 @@
-.todo-actions {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-}
-
-.todo-list {
-  display: grid;
-  gap: 15px;
-}
-
-.todo-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-}
-
-.todo-input {
-  width: 100%;
-  padding: 5px;
-  font-size: 13px;
-}
-
 .todo-body {
   display: grid;
   gap: 15px;
-}
 
-.todo-item-value {
-  position: relative;
-  width: 100%;
-}
-
-.todo-item-value__label {
-  width: 100%;
-  cursor: pointer;
-  word-break: break-word;
-
-  &::before {
-    content: '';
-    position: absolute;
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background-image: url("../../assets/svg/circle.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    left: 0;
-    top: 0;
-  }
-}
-
-.todo-item-value__checkbox {
-  min-width: 20px;
-  min-height: 20px;
-  visibility: hidden;
-
-  & + label {
-    display: inline-flex;
+  .todo-actions {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    user-select: none;
+    gap: 10px;
   }
-}
 
-.todo-button {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  .todo-list {
+    display: grid;
+    gap: 15px;
+  }
+
+  .todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .todo-input {
+    width: 100%;
+    padding: 5px;
+    font-size: 13px;
+  }
+
+  .todo-item-value__label {
+    width: 100%;
+    cursor: pointer;
+    word-break: break-word;
+
+    &::before {
+      content: '';
+      position: absolute;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-image: url("../../assets/svg/circle.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  .todo-item-value__checkbox {
+    min-width: 20px;
+    min-height: 20px;
+    visibility: hidden;
+
+    & + label {
+      display: inline-flex;
+      align-items: center;
+      user-select: none;
+    }
+  }
+
+  .todo-item-value {
+    display: flex;
+    gap: 10px;
+    position: relative;
+    width: 100%;
+  }
+
 }

@@ -1,14 +1,14 @@
-import React, {Dispatch, FC, FormEvent} from 'react';
+import React, { FC, FormEvent} from 'react';
 import TodoInput from "./todo-input";
-import {useDispatch} from "react-redux";
 import {todoAdding} from "../../core/store/reducers/todo-slice";
 import {nanoid} from "@reduxjs/toolkit";
 import plus from "../../assets/svg/plus.svg";
-import {ITodoActionsProps} from "../../core/types/props";
+import {ITodoInputProps} from "../../core/types/props";
+import {useAppDispatch} from "../../core/hooks/use-app-dispatch";
 
-const TodoActions: FC<ITodoActionsProps> = ({taskValue, setTaskValue}) => {
+const TodoActions: FC<ITodoInputProps> = ({taskValue, setTaskValue}) => {
     const isEmpty = taskValue === '';
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     const addTodo = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -19,9 +19,12 @@ const TodoActions: FC<ITodoActionsProps> = ({taskValue, setTaskValue}) => {
 
     return (
         <form onSubmit={addTodo} className={'todo-actions'}>
-            <TodoInput taskValue={taskValue} setTaskValue={setTaskValue}/>
+            <TodoInput
+                taskValue={taskValue}
+                setTaskValue={setTaskValue}
+            />
             <button className={'todo-button'} type={"submit"}>
-                <img src={plus} width={'20px'} height={'20px'} alt="check-circle"/>
+                <img src={plus} alt="check-circle"/>
             </button>
         </form>
     );

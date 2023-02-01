@@ -1,6 +1,6 @@
 import React, {FC, useState} from 'react';
 import TodoList from "./todo-list";
-import "./style.scss"
+import "./style.scss";
 import TodoActions from "./todo-actions";
 
 const TodoBody: FC = () => {
@@ -9,8 +9,14 @@ const TodoBody: FC = () => {
     return (
         <div className={'todo-body todo-border todo-spacing'}>
             <p>Tasks</p>
-            <TodoActions taskValue={taskValue} setTaskValue={setTaskValue}/>
-            <TodoList taskValue={taskValue} setTaskValue={setTaskValue}/>
+            <TodoActions
+                taskValue={taskValue}
+                setTaskValue={setTaskValue}
+            />
+            <TodoList
+                taskValue={taskValue}
+                setTaskValue={setTaskValue}
+            />
         </div>
     );
 };

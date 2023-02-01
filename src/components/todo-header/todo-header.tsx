@@ -5,7 +5,7 @@ import "./style.scss";
 const TodoHeader:FC = () => {
     return (
         <div className={'todo-header todo-border todo-spacing'}>
-            <img width={'20px'} height={'20px'} src={checkMark}
+            <img src={checkMark}
                  alt="check-mark"/>
             <h4>Todo</h4>
         </div>

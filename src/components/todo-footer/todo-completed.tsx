@@ -5,15 +5,18 @@ import TodoCompletedItem from "./todo-completed-item";
 
 const TodoCompleted = () => {
     const {completed} = useAppSelector(selectTodoReducer);
-    const isEmpty = completed.length > 0;
+    const isNotEmpty = completed.length > 0;
 
     return (
         <>
-            {isEmpty
+            {isNotEmpty
                 &&
                 <ul className={'todo-complete-list'}>
-                    {completed.map(task=>
-                        <TodoCompletedItem key={task.id} task={task}/>
+                    {completed.map(task =>
+                        <TodoCompletedItem
+                            key={task.id}
+                            task={task}
+                        />
                     )}
                 </ul>
             }

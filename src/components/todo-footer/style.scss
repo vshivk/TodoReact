@@ -1,19 +1,30 @@
-.todo-complete {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.todo-complete-list{
+.todo-footer {
   display: grid;
   gap: 15px;
+
+  .todo-complete {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .todo-complete-list {
+    display: grid;
+    gap: 15px;
+  }
+
+  .todo-complete-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .todo-complete-item-value {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
 }
-.todo-complete-item {
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
-   gap: 10px;
- }
- .todo-footer{
-   display: grid;
-   gap: 15px;
- }
+

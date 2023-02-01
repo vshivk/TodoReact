@@ -15,13 +15,13 @@ const TodoCompletedItem: FC<ITodoCompletedItemProps> = ({task}) => {
 
     return (
         <li className={'todo-complete-item'}>
-            <div style={{display: 'flex', gap: '10px', alignItems: 'center'}}>
-                <img width={'20px'} height={'20px'} src={checkCircle}
+            <div className={'todo-complete-item-value'}>
+                <img src={checkCircle}
                      alt="check-circle"/>
                 <p>{value}</p>
             </div>
             <button className={'todo-button'} onClick={removeFromCompletedTasks}>
-                <img src={buttonDelete} width={'20px'} height={'20px'} alt="button-delete"/>
+                <img src={buttonDelete} alt="button-delete"/>
             </button>
         </li>
     );

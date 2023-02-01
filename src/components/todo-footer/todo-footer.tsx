@@ -9,10 +9,10 @@ import {useAppSelector} from "../../core/hooks/use-app-selector";
 const TodoFooter: FC = () => {
     const dispatch = useAppDispatch();
     const {completed} = useAppSelector(selectTodoReducer);
-    const isEmpty = completed.length > 0;
+    const isNotEmpty = completed.length > 0;
 
     const removeAllCompleted = () => {
-        if (isEmpty) {
+        if (isNotEmpty) {
             dispatch(todoRemovingAllCompleted());
         }
     }
@@ -22,7 +22,7 @@ const TodoFooter: FC = () => {
             <div className={'todo-complete'}>
                 <p>Completed</p>
                 <button className={'todo-button'} onClick={removeAllCompleted}>
-                    <img src={buttonDelete} width={'20px'} height={'20px'} alt="button-delete"/>
+                    <img src={buttonDelete} alt="button-delete"/>
                 </button>
             </div>
             <TodoCompleted/>
