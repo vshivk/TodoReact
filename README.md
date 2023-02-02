@@ -17,7 +17,7 @@
 * Отсутствие UI библиотек
 
 ## Preview
-![chrome-capture-2023-0-22 (1)](https://user-images.githubusercontent.com/69668430/213917587-56b3f9b5-7630-4114-aaab-9668b0af2fab.gif)
+![preview](https://user-images.githubusercontent.com/69668430/216263173-73c70e31-10ff-4562-8834-fcb4af12341d.gif)
 
 ### Get Started
 ``` bash
